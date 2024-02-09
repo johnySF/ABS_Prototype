@@ -91,16 +91,16 @@ namespace ABS_Prototype
                         } while (flavorInput != 1 && flavorInput != 2);
                         do
                         {
-                            Console.WriteLine("Escolha o tamanho:\n1 - 300ml\n2 - 500ml\n3 - 700ml");
+                            Console.WriteLine("Escolha o tamanho:\n1 - 300ml\n2 - 500ml");
                             cupSizeInput = Convert.ToInt16(Console.ReadLine());
-                            if (cupSizeInput == 1 || cupSizeInput == 2 || cupSizeInput == 3)
+                            if (cupSizeInput == 1 || cupSizeInput == 2)
                                 DrinkOrderJ.cupSize = (CupSizeJuiceEnum)cupSizeInput;
                             else
                             {
                                 Console.WriteLine("Opção Inválida!");
                                 Console.ReadKey();
                             }
-                        } while (cupSizeInput != 1 && cupSizeInput != 2 && cupSizeInput != 3);
+                        } while (cupSizeInput != 1 && cupSizeInput != 2);
                         Console.WriteLine("Gostária de gelo? Y/N");
                         iceInput = Convert.ToChar(Console.ReadLine());
                         if (iceInput == 'y')
