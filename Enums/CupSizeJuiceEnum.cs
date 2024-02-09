@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ABS_Prototype.Enums
+{
+    public enum CupSizeJuiceEnum
+    {
+        small = 1, // 300ml
+        medium = 2 // 500ml
+    }
+}

@@ -1,0 +1,7 @@
+D:\Projects\C#\ABS Prototype\ABS Prototype\obj\Debug\ABS Prototype.csproj.AssemblyReference.cache
+D:\Projects\C#\ABS Prototype\ABS Prototype\obj\Debug\ABS Prototype.csproj.CoreCompileInputs.cache
+D:\Projects\C#\ABS Prototype\ABS Prototype\bin\Debug\ABS Prototype.exe.config
+D:\Projects\C#\ABS Prototype\ABS Prototype\bin\Debug\ABS Prototype.exe
+D:\Projects\C#\ABS Prototype\ABS Prototype\bin\Debug\ABS Prototype.pdb
+D:\Projects\C#\ABS Prototype\ABS Prototype\obj\Debug\ABS Prototype.exe
+D:\Projects\C#\ABS Prototype\ABS Prototype\obj\Debug\ABS Prototype.pdb
