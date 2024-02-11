@@ -13,11 +13,12 @@ namespace ABS_Prototype
     {
         static void Main(string[] args)
         {
-            short typeInput;
+            short drinkType;
             short flavorInput;
             short cupSizeInput;
             char iceInput;
             char takeOut;
+            char shutdownCheck;
             bool OrderSuccessful;
             bool machineShutdown = false;
             SodaOrder sodaOrder = new SodaOrder();
@@ -26,9 +27,16 @@ namespace ABS_Prototype
             do
             {
                 Console.WriteLine("Escolha a categoria: \n1 - Refrigerante\n2 - Suco");
-                typeInput = Convert.ToInt16(Console.ReadLine());
-                switch (typeInput)
+                drinkType = Convert.ToInt16(Console.ReadLine());
+                switch (drinkType)
                 {
+                    case 0:
+                        Console.WriteLine("Certeza que deseja encerrar a aplicação?");
+                        shutdownCheck = Convert.ToChar(Console.ReadLine());
+                        Console.Clear();
+                        if (shutdownCheck == 'y')
+                            machineShutdown = true;
+                        break;
                     case 1:
                         DrinkSoda DrinkOrderS = new DrinkSoda();
                         do
@@ -119,7 +127,7 @@ namespace ABS_Prototype
                         }
                         OrderSuccessful = juiceOrder.CreateOrderJuice(DrinkOrderJ);
                         if (!OrderSuccessful)
-                            Console.WriteLine("erro");
+                            Console.WriteLine("Erro");
                         break;
                     default:
                         Console.WriteLine("Opção inválida");
