@@ -71,7 +71,7 @@ namespace ABS_Prototype
                         {
                             DrinkOrderS.orderType = OrderTypeEnum.TakeOut;
                         }
-                        OrderSuccessful = sodaOrder.CreateOrder(DrinkOrderS);
+                        OrderSuccessful = sodaOrder.CreateOrderSoda(DrinkOrderS);
                         if (!OrderSuccessful)
                             Console.WriteLine("erro");
                         break;
@@ -117,7 +117,7 @@ namespace ABS_Prototype
                         {
                             DrinkOrderJ.orderType = OrderTypeEnum.TakeOut;
                         }
-                        OrderSuccessful = juiceOrder.CreateOrder(DrinkOrderJ);
+                        OrderSuccessful = juiceOrder.CreateOrderJuice(DrinkOrderJ);
                         if (!OrderSuccessful)
                             Console.WriteLine("erro");
                         break;
