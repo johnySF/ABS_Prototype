@@ -10,7 +10,7 @@ namespace ABS_Prototype.Models
     {
         private DrinkSoda _drink;
         
-        public bool CreateOrder(DrinkSoda drinkSoda)
+        public bool CreateOrderSoda(DrinkSoda drinkSoda)
         {
             if (drinkSoda == null)
             {
