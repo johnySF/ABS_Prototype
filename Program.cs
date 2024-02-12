@@ -16,9 +16,9 @@ namespace ABS_Prototype
             short drinkType;
             short flavorInput;
             short cupSizeInput;
-            char iceInput;
-            char takeOut;
-            char shutdownCheck;
+            string iceInput;
+            string takeOut;
+            string shutdownCheck;
             bool OrderSuccessful;
             bool machineShutdown = false;
             SodaOrder sodaOrder = new SodaOrder();
@@ -32,19 +32,20 @@ namespace ABS_Prototype
                 {
                     case 0:
                         Console.WriteLine("Certeza que deseja encerrar a aplicação?");
-                        shutdownCheck = Convert.ToChar(Console.ReadLine());
+                        shutdownCheck = Convert.ToString(Console.ReadLine());
                         Console.Clear();
-                        if (shutdownCheck == 'y')
+                        shutdownCheck = shutdownCheck.ToLower();
+                        if (shutdownCheck == "y")
                             machineShutdown = true;
                         break;
                     case 1:
-                        DrinkSoda DrinkOrderS = new DrinkSoda();
+                        DrinkSoda DrinkOrderSoda = new DrinkSoda();
                         do
                         {
                             Console.WriteLine("1 - Coca Cola\n2 - Guaraná");
                             flavorInput = Convert.ToInt16(Console.ReadLine());
                             if (flavorInput == 1 || flavorInput == 2)
-                                DrinkOrderS.flavor = (SodaFlavorEnum)flavorInput;
+                                DrinkOrderSoda.flavor = (SodaFlavorEnum)flavorInput;
                             else
                             {
                                 Console.WriteLine("Opção Inválida!");
@@ -56,7 +57,7 @@ namespace ABS_Prototype
                             Console.WriteLine("Escolha o tamanho:\n1 - 300ml\n2 - 500ml\n3 - 700ml");
                             cupSizeInput = Convert.ToInt16(Console.ReadLine());
                             if (cupSizeInput == 1 || cupSizeInput == 2 || cupSizeInput == 3)
-                                DrinkOrderS.cupSize = (CupSizeSodaEnum)cupSizeInput;
+                                DrinkOrderSoda.cupSize = (CupSizeSodaEnum)cupSizeInput;
                             else
                             {
                                 Console.WriteLine("Opção Inválida!");
@@ -64,33 +65,35 @@ namespace ABS_Prototype
                             }
                         } while (cupSizeInput != 1 && cupSizeInput != 2 && cupSizeInput != 3);
                         Console.WriteLine("Gostária de gelo? Y/N");
-                        iceInput = Convert.ToChar(Console.ReadLine());
-                        if (iceInput == 'y')
+                        iceInput = Convert.ToString(Console.ReadLine());
+                        iceInput = iceInput.ToLower();
+                        if (iceInput == "y")
                         {
-                            DrinkOrderS.iceCount = 6;
+                            DrinkOrderSoda.iceCount = 6;
                         }
                         Console.WriteLine("Ira beber no local? Y/N");
-                        takeOut = Convert.ToChar(Console.ReadLine());
-                        if (takeOut == 'y')
+                        takeOut = Convert.ToString(Console.ReadLine());
+                        takeOut = takeOut.ToLower();
+                        if (takeOut == "y")
                         {
-                            DrinkOrderS.orderType = OrderTypeEnum.EatIn;
+                            DrinkOrderSoda.orderType = OrderTypeEnum.EatIn;
                         }
                         else
                         {
-                            DrinkOrderS.orderType = OrderTypeEnum.TakeOut;
+                            DrinkOrderSoda.orderType = OrderTypeEnum.TakeOut;
                         }
-                        OrderSuccessful = sodaOrder.CreateOrderSoda(DrinkOrderS);
+                        OrderSuccessful = sodaOrder.CreateOrderSoda(DrinkOrderSoda);
                         if (!OrderSuccessful)
                             Console.WriteLine("erro");
                         break;
                     case 2:
-                        DrinkJuice DrinkOrderJ = new DrinkJuice();
+                        DrinkJuice DrinkOrderJuice = new DrinkJuice();
                         do
                         {
                             Console.WriteLine("1 - Laranja\n2 - Uva");
                         flavorInput = Convert.ToInt16(Console.ReadLine());
                             if (flavorInput == 1 || flavorInput == 2)
-                                DrinkOrderJ.flavor = (JuiceFlavorEnum)flavorInput;
+                                DrinkOrderJuice.flavor = (JuiceFlavorEnum)flavorInput;
                             else
                             {
                                 Console.WriteLine("Opção Inválida!");
@@ -102,7 +105,7 @@ namespace ABS_Prototype
                             Console.WriteLine("Escolha o tamanho:\n1 - 300ml\n2 - 500ml");
                             cupSizeInput = Convert.ToInt16(Console.ReadLine());
                             if (cupSizeInput == 1 || cupSizeInput == 2)
-                                DrinkOrderJ.cupSize = (CupSizeJuiceEnum)cupSizeInput;
+                                DrinkOrderJuice.cupSize = (CupSizeJuiceEnum)cupSizeInput;
                             else
                             {
                                 Console.WriteLine("Opção Inválida!");
@@ -110,22 +113,24 @@ namespace ABS_Prototype
                             }
                         } while (cupSizeInput != 1 && cupSizeInput != 2);
                         Console.WriteLine("Gostária de gelo? Y/N");
-                        iceInput = Convert.ToChar(Console.ReadLine());
-                        if (iceInput == 'y')
+                        iceInput = Convert.ToString(Console.ReadLine());
+                        iceInput = iceInput.ToLower();
+                        if (iceInput == "y")
                         {
-                            DrinkOrderJ.iceCount = 12;
+                            DrinkOrderJuice.iceCount = 12;
                         }
                         Console.WriteLine("Ira beber no local? Y/N");
-                        takeOut = Convert.ToChar(Console.ReadLine());
-                        if (takeOut == 'y')
+                        takeOut = Convert.ToString(Console.ReadLine());
+                        takeOut = takeOut.ToLower();
+                        if (takeOut == "y")
                         {
-                            DrinkOrderJ.orderType = OrderTypeEnum.EatIn;
+                            DrinkOrderJuice.orderType = OrderTypeEnum.EatIn;
                         }
                         else
                         {
-                            DrinkOrderJ.orderType = OrderTypeEnum.TakeOut;
+                            DrinkOrderJuice.orderType = OrderTypeEnum.TakeOut;
                         }
-                        OrderSuccessful = juiceOrder.CreateOrderJuice(DrinkOrderJ);
+                        OrderSuccessful = juiceOrder.CreateOrderJuice(DrinkOrderJuice);
                         if (!OrderSuccessful)
                             Console.WriteLine("Erro");
                         break;
