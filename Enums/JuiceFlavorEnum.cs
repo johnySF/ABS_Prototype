@@ -8,7 +8,7 @@ namespace ABS_Prototype.Enums
 {
     public enum JuiceFlavorEnum : int
     {
-        grape = 1,
-        orange = 2
+        orange = 1,
+        grape = 2
     }
 }
